@@ -1,4 +1,4 @@
-# Real-Time Word Count using Kafka and PySpark
+# Real-Time Data Ingestion and Processing for Word Count Application
 
 A real-time stream-processing project that receives text messages through Apache Kafka and processes them using PySpark Structured Streaming to calculate and display word frequencies.
 
