@@ -1,41 +1,44 @@
 # Real-Time Data Ingestion and Processing for Word Count Application
 
-A real-time stream-processing project that receives text messages through Apache Kafka and processes them using PySpark Structured Streaming to calculate and display word frequencies.
+A real-time data ingestion and stream-processing project that receives text messages through Apache Kafka and processes them using PySpark Structured Streaming to calculate and display word frequencies.
 
 ## Project Overview
 
-This project demonstrates a real-time data processing pipeline using:
+This project demonstrates a real-time data pipeline using:
 
-- Apache Kafka – real-time message streaming
-- PySpark Structured Streaming – stream processing
+- Apache Kafka – real-time data ingestion and message streaming
+- PySpark Structured Streaming – real-time stream processing
 - Java 17 – runtime required by Spark
 - Python 3.11 – application environment
 - Spark SQL Kafka Connector – Kafka integration with PySpark
 
-The application continuously reads text messages from a Kafka topic, splits the text into individual words, calculates their frequencies, and displays the results in real time.
+The application continuously receives text data through a Kafka topic, processes the incoming stream using PySpark, splits text into individual words, calculates their frequencies, and displays the results in real time.
 
 ## Architecture
 
 ```text
-                Text Input
-                    │
-                    ▼
-             Kafka Producer
-                    │
-                    ▼
-             Kafka Topic
-                    │
-                    ▼
-       PySpark Structured Streaming
-                    │
-                    ▼
-             Word Processing
-                    │
-                    ▼
-            Word Frequency
-                    │
-                    ▼
-             Console Output
+                    Text Input
+                        │
+                        ▼
+                 Kafka Producer
+                        │
+                        ▼
+                  Kafka Topic
+                        │
+                        ▼
+          PySpark Structured Streaming
+                        │
+                        ▼
+               Data Ingestion
+                        │
+                        ▼
+                 Word Processing
+                        │
+                        ▼
+               Word Frequency
+                        │
+                        ▼
+                Console Output
 ```
 
 ## Technology Stack
@@ -52,13 +55,18 @@ The application continuously reads text messages from a Kafka topic, splits the 
 ## Project Structure
 
 ```text
-realtime-wordcount/
+real-time-data-ingestion-and-processing-for-word-count-application/
 │
 ├── app/
 │   └── realtime_wordcount.py
 │
 ├── jars/
 │   └── spark-sql-kafka-0-10_2.12-3.5.9.jar
+│
+├── documentation/
+│   ├── MSME_Original_Project_Documentation.pdf
+│   ├── Upgraded_Project_Documentation.pdf
+│   └── MSME_Project_Certificate.jpeg
 │
 ├── activate.sh
 ├── requirements.txt
@@ -71,16 +79,16 @@ realtime-wordcount/
 
 ## Environment Isolation
 
-The project uses a self-contained environment so its versions do not interfere with the system installation.
+The project uses a self-contained environment so that its software versions do not interfere with the system installation.
 
-The project contains its own:
+The development environment contains its own:
 
 - Java 17 installation
-- Python 3.11 installation
+- Python 3.11 environment
 - Python virtual environment
-- Kafka installation
+- Apache Kafka installation
 
-These local runtime directories are excluded from Git using `.gitignore`.
+Local runtime directories are excluded from Git using `.gitignore`.
 
 ## Requirements
 
@@ -103,11 +111,11 @@ requirements.txt
 From the project directory:
 
 ```bash
-cd ~/realtime-wordcount
+cd ~/real-time-data-ingestion-and-processing-for-word-count-application
 source activate.sh
 ```
 
-Verify:
+Verify the environment:
 
 ```bash
 python --version
@@ -133,27 +141,27 @@ In another terminal, start Kafka:
 Activate the environment:
 
 ```bash
-cd ~/realtime-wordcount
+cd ~/real-time-data-ingestion-and-processing-for-word-count-application
 source activate.sh
 ```
 
-Then run:
+Run the application:
 
 ```bash
 ./run-wordcount.sh
 ```
 
-The PySpark application connects to Kafka and begins processing incoming messages.
+The PySpark Structured Streaming application connects to Kafka and begins processing incoming messages.
 
 ## Data Flow
 
 1. A producer sends text messages to a Kafka topic.
-2. Kafka stores and streams the messages.
+2. Kafka receives and stores the incoming messages.
 3. PySpark Structured Streaming consumes the Kafka stream.
 4. The application extracts the message value.
-5. The text is split into individual words.
-6. Words are grouped and counted.
-7. The results are displayed in the console.
+5. The incoming text is split into individual words.
+6. Words are grouped and their frequencies are calculated.
+7. The processed results are displayed in the console.
 
 ## Example
 
@@ -176,21 +184,50 @@ spark   1
 
 ## Key Concepts Demonstrated
 
-- Real-time data streaming
+- Real-time data ingestion
 - Event-driven data processing
-- Kafka producers and consumers
+- Apache Kafka producers and consumers
 - Kafka topics
 - PySpark Structured Streaming
-- Distributed stream processing
+- Stream processing
 - Word-frequency aggregation
+- Distributed data processing
 - Isolated development environments
+
+## Documentation
+
+The repository contains both the original project documentation and the upgraded project documentation.
+
+### Original MSME Documentation
+
+The original project documentation prepared during the MSME project is preserved in:
+
+```text
+documentation/MSME_Original_Project_Documentation.pdf
+```
+
+### Upgraded Project Documentation
+
+The upgraded documentation describes the complete implementation, workflow, architecture, technologies, execution process, and possible future enhancements:
+
+```text
+documentation/Upgraded_Project_Documentation.pdf
+```
+
+### MSME Project Certificate
+
+The project completion certificate is preserved in:
+
+```text
+documentation/MSME_Project_Certificate.jpeg
+```
 
 ## Future Enhancements
 
-Possible improvements include:
+Possible future improvements include:
 
 - Persistent storage using PostgreSQL or another database
-- Real-time dashboards using Power BI, Grafana, or another visualization platform
+- Real-time dashboards using Power BI or Grafana
 - Window-based word-frequency analysis
 - Top-N word detection
 - Multiple Kafka partitions
@@ -198,11 +235,15 @@ Possible improvements include:
 - Docker-based deployment
 - Cloud deployment
 - Real-time monitoring
-- REST API for accessing processed results
-- Advanced text analytics and NLP
+- REST API for processed results
+- Advanced text analytics
+- Natural Language Processing (NLP)
 
 ## Author
 
 **Venky**
 
-GitHub: https://github.com/VectorsMap-04
+GitHub:
+
+https://github.com/VectorsMap-04
+
