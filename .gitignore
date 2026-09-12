@@ -1,0 +1,30 @@
+# Python
+venv/
+python/
+__pycache__/
+*.py[cod]
+
+# Java
+jdk-17/
+
+# Kafka
+kafka/
+kafka-data/
+
+# Downloaded installers/source archives
+downloads/
+
+# Spark runtime data
+checkpoints/
+logs/
+
+# IDE / OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Environment / secrets
+.env
+*.key
+*.pem
